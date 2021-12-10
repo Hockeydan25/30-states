@@ -1,7 +1,8 @@
+<!--this will get states. key- unique name/object. -->
 <template>
     <div>
-        <p v-for="state in states" v-bind:key="state.name" >
-            {{ state }}
+        <p v-for="state in states" v-bind:key="state.name">
+            {{ state.name }}
         </p>
 
     </div>
@@ -13,7 +14,8 @@
 
 export default{
     name: 'StateList',
-    data() {
+    //data function will return the data for/in a state array the states.
+    data() {          
         return {
             states: []
         }

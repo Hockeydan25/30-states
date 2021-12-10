@@ -1,11 +1,12 @@
-<!--Template header. reused hello app data is loaded for us when you run the vue install.
+<!--Template header App.vue is responsible 
 root error with only one element, adding a div element fixed error this for vue rev 3. -->
 <template>    
   <div> 
 
     <page-header></page-header>
 
-    <p>todo app content page footer</p>
+    <router-view></router-view>
+
     <state-list></state-list>
 
     <page-footer></page-footer>

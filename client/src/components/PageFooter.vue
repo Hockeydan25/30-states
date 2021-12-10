@@ -1,11 +1,20 @@
 <template>
     <div>
-        <p>todo - link for the site part and </p>
+        <div id="navigation-links">
+            
+            <span class="nav-link">    
+                <router-link to="/">Home</router-link>
+            </span>
 
-        <p>Header image by 
-            <a href="https://unsplash.com/photos/KpBXAOs80YI">Photo by @ChrisLawton on Unsplash></a>
-        </p>
-    
+            <span class="nam-link">
+                <router-link to="/about">About this site</router-link>
+            </span>
+
+        </div>
+            <p>Header image by 
+                <a href="https://unsplash.com/photos/KpBXAOs80YI">Photo by @ChrisLawton on Unsplash></a>
+            </p>
+        
     </div>
 </template>
 
@@ -19,6 +28,11 @@ export default {
 </script>
 
 <style scoped>
+/* rem units scale well on different size pages. Spacing for the two span links our pages */
+.nav-link{
 
+    margin: 1rem;
+
+}
 
 </style>
