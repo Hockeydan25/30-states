@@ -6,6 +6,7 @@ root error with only one element, adding a div element fixed error this for vue 
     <page-header></page-header>
 
     <p>todo app content page footer</p>
+    <state-list></state-list>
 
     <page-footer></page-footer>
 
@@ -17,19 +18,19 @@ root error with only one element, adding a div element fixed error this for vue 
 <script>
 
 
-//import PagerHeader from '@/components/PageHeader.vue' this version causes page to not load
+//import PagerHeader from '@/components/PageHeader.vue' this version causes page to not load.
 import PageHeader from './components/PageHeader.vue'//this was auto compliled with pag-header in template.
 import PageFooter from './components/PageFooter.vue'
+import StateList from './components/StateList.vue'
 
 export default {
   name: 'App',
   components: {
     PageHeader,
-    PageFooter       
+    PageFooter,
+    StateList       
   },
-  mounted(){//life cycle hook or methods. should get list of objects. from express server
-    this.$stateService.getAllStates().then( states => console.log(states)) //making a requst
-  } 
+  
 }
 </script>
 <!--End Script-->
