@@ -3,11 +3,13 @@
         <div id="navigation-links">
             
             <span class="nav-link">    
-                <router-link to="/">Home</router-link>
+                <!--<router-link to="/">Home</router-link>-->
+                <router-link v-bind:to="{ name: 'StateList' }">Home</router-link>
             </span>
 
-            <span class="nam-link">
-                <router-link to="/about">About this site</router-link>
+            <span class="nav-link">
+                <!--<router-link to="/about">About this site</router-link>-->
+                <router-link v-bind:to="{ name: 'AboutSite' }">About this site</router-link>
             </span>
 
         </div>
