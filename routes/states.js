@@ -19,7 +19,8 @@ router.patch('/states/:name', function(req, res, next) { //function here will fi
             .then( rowsUpdated => { //promise return
                 let numberOfRowsUpdated = rowsUpdated[0]
                 if (numberOfRowsUpdated == 1) {
-                    return res.send('Okay') //sucess response.
+                    return res.send('Okay') //sucess responseStatus code 200(http).
+                    //indicates that the request has been processed successfully on the server.
                 }
                 return res.status(404).send('State not found')//no stateName like qwerty.
             }) 

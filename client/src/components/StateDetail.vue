@@ -1,9 +1,9 @@
 <template>
     <div class="state-info">
-        
+
         <span class="state-name">{{ state.name }}</span>
         <div>
-            <input class="visited-state" type="checkbox" name="" id="">
+            <input class="visited-state" type="checkbox" v-model="visited" v-on:changed="visitedChanged">
         </div>
 
     </div>
@@ -13,10 +13,22 @@
 <script>
 
 //create state detail for stateList to export a state object this script.
+//stateDetail parent StateList emit chaeck box changes
 export default {
     name: 'StateDetail',
+    emits: ['update-visited'],
     props: {
-        state: Object
+        state: Object   //don't touch/modify props
+    },
+    data (){
+        return {
+            visited: this.state.visited//okay to modify data
+        }
+    },
+    methods: {
+        visitedChanged() {// method like our event listner from html.
+            this.$emit('update-visited', this.state.name, this.visited)
+        }
     }
 
 }

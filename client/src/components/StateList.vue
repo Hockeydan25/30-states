@@ -2,7 +2,10 @@
 <template>
     <div class="state-list-container"> <!-- with class we can help the dipaly in css section-->
         <div class="state-container" v-for="state in states" v-bind:key="state.name">
-            <state-detail v-bind:state="state"></state-detail> <!-- state prop to a value state in states array.-->
+            <state-detail 
+            v-bind:state="state"
+            v-on:update-visited="updateVisited"
+            ></state-detail> <!-- state prop to a value state in states array.-->
         </div>
 
     </div>
@@ -30,6 +33,13 @@ export default{
             this.$stateService.getAllStates().then( states => {
                 this.states = states
             })
+        },
+        updateVisited(stateName, visited) {//object arguments...makeing api call to stateService setVisited.
+            this.$stateService.stateVisited(stateName, visited).then( () =>{
+                this.fetchAllStates() //latest data updated. 
+            })
+               
+            
         }
     } 
 }
