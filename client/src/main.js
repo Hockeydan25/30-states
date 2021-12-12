@@ -8,9 +8,9 @@ import router from '@/router' //list of routers from router availble
 
 let app = createApp(App) //telling to use vue.
 
-app.use(router) //telling to use router.
-
 app.config.globalProperties.$stateService = StateAPIService
+
+app.use(router) //telling to use router.
 
 app.mount('#app')
 

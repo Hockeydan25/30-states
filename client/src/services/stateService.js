@@ -10,8 +10,8 @@ export default {
     },
     setVisited(stateName, visited){
         //example URL api/state/"stateName here"
-        let data = {visited: visited }
-        return axios.patch('/api/states' +stateName, requestData).then( response =>{ //request to api.
+        let requestData = {visited: visited }
+        return axios.patch('/api/states/', + stateName, requestData ).then( response =>{ //request to api.
             return response.data //should be sucess
         })    
     }

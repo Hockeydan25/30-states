@@ -1,11 +1,17 @@
 <template>
     <div class="state-info">
-
         <span class="state-name">{{ state.name }}</span>
         <div>
-            <input class="visited-state" type="checkbox" v-model="visited" v-on:changed="visitedChanged">
+            <input class="visited-state" type="checkbox" 
+            v-model="visited" v-on:change="visitedChanged">
         </div>
 
+        <div>
+            <!--/map/Iowa or /map/Gerogia-->
+            <router-link v-bind:to=" {name: 'StateMap', params: {state: state.name}}">
+                <img class="map-icon" src="@/assets/map_america.png">
+            </router-link>
+        </div>
     </div>
     
 </template>
@@ -18,7 +24,7 @@ export default {
     name: 'StateDetail',
     emits: ['update-visited'],
     props: {
-        state: Object   //don't touch/modify props
+        state: Object,   //don't touch/modify props
     },
     data (){
         return {
@@ -47,6 +53,10 @@ export default {
 .visited-state {
     margin: 1rem;
     
+}
+.map-icon {
+    width: 2rem;
+    height: 2rem;
 }
 
 </style>

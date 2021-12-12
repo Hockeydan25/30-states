@@ -17,6 +17,9 @@
                 <a href="https://unsplash.com/photos/KpBXAOs80YI">Photo by @ChrisLawton on Unsplash></a>
             </p>
         
+            <p><a target="_blank" href="https://icons8.com/icon/3Tfh1tGyWiEj/america">Map icon</a> 
+                icon by <a target="_blank" href="https://icons8.com">Icons8</a>            
+            </p>
     </div>
 </template>
 
