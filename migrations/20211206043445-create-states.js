@@ -13,7 +13,7 @@ module.exports = {
       },
       visited: {
         type: Sequelize.BOOLEAN,
-        default: false
+        defaultValue: false
       },
       lat: {
         type: Sequelize.FLOAT

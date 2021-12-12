@@ -6,6 +6,8 @@ import StateAPIService from '@/services/stateService'  //making available to vue
 
 import router from '@/router' //list of routers from router availble
 
+import 'leaflet/dist/leaflet.css'
+
 let app = createApp(App) //telling to use vue.
 
 app.config.globalProperties.$stateService = StateAPIService

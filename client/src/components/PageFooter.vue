@@ -8,7 +8,7 @@
             </span>
 
             <span class="nav-link">
-                <!--<router-link to="/about">About this site</router-link>-->
+                <!-- Router-links can use absolute paths, as strings -->
                 <router-link v-bind:to="{ name: 'AboutSite' }">About this site</router-link>
             </span>
 
