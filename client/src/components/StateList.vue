@@ -37,12 +37,19 @@ export default{
             this.$stateService.getAllStates().then( states => {
                 this.states = states
             })
+            .catch( err => {// 404 not found and 500 server error
+                alert('Sorry, can\'t fetch state list now') //500 generic for user.
+                console.log(err) //for the developer eyes only.
+            })
         },
         updateVisited(stateName, visited) {//object arguments...makeing api call to stateService setVisited.
             this.$stateService.setVisited(stateName, visited).then( () =>{
                 this.fetchAllStates() //latest data updated. 
             })
-               
+            .catch( err => {// 404 not found and 500 server error
+                alert('Sorry, can\'t update the state list now') //500 generic for user.
+                console.log(err) //for the developer eyes only.
+            })               
             
         }
     } 

@@ -4,9 +4,9 @@
 
         <P v-if="state.visited">You have visited this state:</P>
         <p v-else >You have not visted this state yet:</p>
-        <!--todo map here-->
-        <div id="map-container"><!--map center is combining lat lon in a computed method.-->
-            <l-map v-on:ready="onMapReady" v-bind:center="mapCenter" v-bind:zoom="state.zoom">
+        <!--map will load when dataReady  =true-->
+        <div id="map-container" v-if="dataReady"><!--map center is combining lat lon in a computed method.-->
+            <l-map ref="map" v-on:ready="onMapReady" v-bind:center="mapCenter" v-bind:zoom="state.zoom">
                 <l-tile-layer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution="&copy; OpenStreetMap contributors">
@@ -43,13 +43,22 @@ export default {
                 this.state = state //over write
                 this.dataReady = true //now we can load state
             })
+            .catch( err => {// 404 not found and 500 server error
+                if ( err.response && err.response.status === 404) { //literally is
+                    this.state.name = '?' //van be better
+                } else {
+                    alert('Sorry, error fetching data about this state') //500 generic for user.
+                    console.log(err) //for the developer eyes only.
+                }
+            })
         },
         onMapReady() {
             this.mapReady = true //l-map emits an event call, ready called.
         },
         setMapView() {
-            if (this.mapReady && this.dataReady){
-                //todo -make sure map shows correct part of the world.
+            if (this.mapReady && this.dataReady) {
+                //-makes sure map shows correct part of the world and zoom level. manual assignments with ref.
+                this.$refs.map.leafletObject.setView(this.mapCenter, this.zoom)
             }
         }
     },
