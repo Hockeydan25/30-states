@@ -4,7 +4,8 @@ let states_api = require('./routes/states')
 
 let app = express()
 
-app.use(express.static(path.join(__dirname, 'client', 'dist' )))
+let vueAppPath = path.join(__dirname, 'client', 'dist' )
+app.use(express.static(vueAppPath))// joining the build where vue app is
 
 app.use(express.json() ) 
 
