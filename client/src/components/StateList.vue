@@ -1,26 +1,31 @@
 <!--this will get states. key- unique name/object. -->
 <template>
-
-    <div class="state-list-container"> <!-- with class we can help the dipaly in css section-->
-        <div class="state-container" v-for="state in states" v-bind:key="state.name">
-            <state-detail 
-                v-bind:state="state"
-                v-on:update-visited="updateVisited"
-            ></state-detail> <!-- state prop to a value state in states array.-->
+    <div>
+        <div>
+            <state-summary v-bind:states="states"></state-summary>
         </div>
 
-    </div>
-    
+        <div class="state-list-container"> <!-- with class we can help the dipaly in css section-->
+            <div class="state-container" v-for="state in states" v-bind:key="state.name">
+                <state-detail 
+                    v-bind:state="state"
+                    v-on:update-visited="updateVisited"
+                ></state-detail> <!-- state prop to a value state in states array.-->
+            </div>
+        </div>
+    </div>    
 </template>
 
 <script>
 import StateDetail from './StateDetail.vue'
+import StateSummary from './StateSummary.vue'
 
 
 export default{
     components: { 
-      StateDetail 
-  
+      StateDetail, 
+      StateSummary
+        
     },
     name: 'StateList',
     //data function will return the data for/in a state array the states.
