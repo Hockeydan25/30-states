@@ -27,7 +27,7 @@ router.get('/state/:name', function(req, res ,next) {
 })
 
 //patch route to update a state -visited check or unchecked.
-router.patch('/state/:name', function(req, res, next) { //function here will find any state, and visited or not w/checked.  
+router.patch('/states/:name', function(req, res, next) { //function here will find any state, and visited or not w/checked.  
     let stateName = req.params.name
     let stateVisited = req.body.visited
 

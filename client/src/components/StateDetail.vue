@@ -24,7 +24,7 @@ export default {
     name: 'StateDetail',
     emits: ['update-visited'],
     props: {
-        state: Object,   //don't touch/modify props
+        state: Object   //don't touch/modify props
     },
     data (){
         return {

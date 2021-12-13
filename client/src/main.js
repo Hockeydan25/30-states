@@ -1,4 +1,4 @@
-// these import are telling vue where to go to get the data?
+// these imports are telling vue where to go to get the data?
 import { createApp } from 'vue'
 import App from './App.vue'
 

@@ -7,7 +7,7 @@ root error with only one element, adding a div element fixed error this for vue 
 
     <router-view></router-view>
 
-    <state-list></state-list>
+    <!--<state-list></state-list>-->
 
     <page-footer></page-footer>
 

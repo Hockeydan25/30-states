@@ -19,7 +19,7 @@ import StateDetail from './StateDetail.vue'
 
 export default{
     components: { 
-      StateDetail, 
+      StateDetail 
   
     },
     name: 'StateList',

@@ -12,12 +12,12 @@ export default {
     setVisited(stateName, visited){
         //example URL api/state/"stateName here"
         let requestData = {visited: visited }
-        return axios.patch('/api/states/', + stateName, requestData ).then( response =>{ //request to api.
+        return axios.patch('/api/states/' + stateName, requestData ).then( response =>{ //request to api.
             return response.data //should be sucess
         })    
     },
     getOneState(stateName) {
-        return axios.get('/api/state/', + stateName).then( response => {
+        return axios.get('/api/state/' + stateName).then( response => {
             return response.data
         }) 
     }
